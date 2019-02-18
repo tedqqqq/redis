@@ -1,0 +1,28 @@
+建立表结构：
+create table user_t(
+ id  int(6) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+ user_name varchar(40),
+ password varchar(255) ,
+ age int(4)
+);
+
+
+在目录：
+D:\tools\mybatisRev 下 执行 命令
+java -jar mybatis-generator-core-1.3.6.jar -configfile generatorConfig.xml -overwrite
+
+
+
+jsp 页面中标签 的name 写成对象的属性名称，后台可以直接保存对象
+
+出现HTTP Status 400大多是因为，jsp的form表单提交的字段类型和后台接收字段类型不匹配造成的  比如后台接收为blob 前台为String
+
+@ControllerAdvice 注解的类要和controller 在一起。
+
+单纯的存一个字符串，放在request.addatrr..中页面中无法直接映射。放在MOdel 中就可以。
+model.addAttribute("mm", "123");
+
+
+jsp 中的一些提交按钮 不要把id ,name 写成 submit 等关键字！否则会出现问题。
+
+经过多次试验，把js,css,等放在 WEB-INF下都加载不上，网上的方法都试验了，不生效。只有把这些文件夹移动到webapp 下才可以。
